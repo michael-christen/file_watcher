@@ -30,8 +30,8 @@ class FileChangeHandler(PatternMatchingEventHandler):
         self.thread.start()
 
     def on_modified(self, event):
-        super(FileChangeHandler, self).one_modified(event)
-        logger.info("Modified {}".format(event.src_path))
+        super(FileChangeHandler, self).on_modified(event)
+        print "Modified {}".format(event.src_path)
         self.updated.set()
 
 def main():
